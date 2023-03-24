@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scriptsSumit.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Bet For Respect</title>
+  </head>
+  <body>
+    <nav
+      class="bg-white-800 flex p-5 flex w-100 justify-between flex space-x-2"
+    >
+      <div class="">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z"
+          />
+        </svg>
+      </div>
+      <div class="">
+        <a href="#">Home</a>
+        <a href="#">Yo</a>
+        <a href="#">About</a>
+      </div>
+      <div class="flex">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+          />
+        </svg>
+      </div>
+    </nav>
+    <main>
+      <!-- carousel -->
+      <!-- Need to improve size with responsive rather than viewport -->
+
+      <div
+        id="carouselExampleCaptions"
+        class="relative"
+        data-te-carousel-init
+        data-te-carousel-slide
+      >
+        <div
+          class="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+          data-te-carousel-indicators
+        >
+          <button
+            type="button"
+            data-te-target="#carouselExampleCaptions"
+            data-te-slide-to="0"
+            data-te-carousel-active
+            class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-te-target="#carouselExampleCaptions"
+            data-te-slide-to="1"
+            class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-te-target="#carouselExampleCaptions"
+            data-te-slide-to="2"
+            class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div
+          class="relative w-full overflow-hidden after:clear-both after:block after:content-['']"
+        >
+          <div
+            class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-active
+            data-te-carousel-item
+            style="backface-visibility: hidden"
+          >
+            <img
+              src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg"
+              class="block w-full"
+              alt="..."
+            />
+            <div
+              class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block"
+            >
+              <h5 class="text-xl">First slide label</h5>
+              <p>
+                Some representative placeholder content for the first slide.
+              </p>
+            </div>
+          </div>
+          <div
+            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-item
+            style="backface-visibility: hidden"
+          >
+            <img
+              src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg"
+              class="block w-full"
+              alt="..."
+            />
+            <div
+              class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block"
+            >
+              <h5 class="text-xl">Second slide label</h5>
+              <p>
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div
+            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-item
+            style="backface-visibility: hidden"
+          >
+            <img
+              src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg"
+              class="block w-full"
+              alt="..."
+            />
+            <div
+              class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block"
+            >
+              <h5 class="text-xl">Third slide label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+          type="button"
+          data-te-target="#carouselExampleCaptions"
+          data-te-slide="prev"
+        >
+          <span class="inline-block h-8 w-8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </span>
+          <span
+            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Previous</span
+          >
+        </button>
+        <button
+          class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+          type="button"
+          data-te-target="#carouselExampleCaptions"
+          data-te-slide="next"
+        >
+          <span class="inline-block h-8 w-8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </span>
+          <span
+            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Next</span
+          >
+        </button>
+      </div>
+
+      <div>
+        <!-- Need to improve size with responsive rather than viewport -->
+        <div
+          class="container mx-auto max-w-[90vw] rounded mt-[20px] min-h-[50vh] border-2 border-gray-300"
+        >
+          <div
+            class="text-sm font-medium text-center text-gray-500 dark:text-gray-400 dark:border-gray-700 max-h-[80vw] flex justify-center"
+          >
+            <ul class="flex flex-wrap -mb-px">
+              <li class="mr-2">
+                <a
+                  href="#"
+                  class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                  >La Liga</a
+                >
+              </li>
+              <li class="mr-2">
+                <a
+                  href="#"
+                  class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
+                  aria-current="page"
+                  >Me</a
+                >
+              </li>
+              <li class="mr-2">
+                <a
+                  href="#"
+                  class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                  >Me</a
+                >
+              </li>
+              <li class="mr-2">
+                <a
+                  href="#"
+                  class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                  >Me</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Add Games Dynamically -->
+          <div class="flex w-full flex-wrap justify-center mt-[10px] mx-auto">
+            <div
+              class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
+              onclick="openModal()"
+            >
+              Text
+            </div>
+            <div
+              class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
+            >
+              Text
+            </div>
+            <div
+              class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
+            >
+              Text
+            </div>
+            <div
+              class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+              style="background: rgba(0, 0, 0, 0.7)"
+            >
+              <div
+                class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
+              >
+                <div class="modal-content py-4 text-left px-6">
+                  <!--Title-->
+                  <div class="flex justify-between items-center pb-3">
+                    <p class="text-2xl font-bold">Header</p>
+                    <div class="modal-close cursor-pointer z-50">
+                      <svg
+                        class="fill-current text-black"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                      >
+                        <path
+                          d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <!--Body-->
+                  <div class="my-5">
+                    <p>
+                      Inliberali Persius Multi iustitia pronuntiaret expeteretur
+                      sanos didicisset laus angusti ferrentur arbitrium
+                      arbitramur huic desiderent.?
+                    </p>
+                  </div>
+                  <!--Footer-->
+                  <div class="flex justify-end pt-2">
+                    <button
+                      class="focus:outline-none modal-close px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      class="focus:outline-none px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400"
+                    >
+                      Confirm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

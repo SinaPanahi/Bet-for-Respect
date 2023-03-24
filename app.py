@@ -11,7 +11,8 @@ if __name__ == '__main__':
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    # changed home route
+    return render_template('index.html')
 
 @app.route('/about')
 def about():
