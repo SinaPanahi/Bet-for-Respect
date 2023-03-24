@@ -2,8 +2,7 @@ const modal = document.querySelector(".main-modal");
 const closeButton = document.querySelectorAll(".modal-close");
 
 const modalClose = () => {
-  document.body.style.position = "";
-  document.body.style.top = "";
+  document.body.style = "overflow-y:scroll";
   modal.classList.remove("fadeIn");
   modal.classList.add("fadeOut");
   setTimeout(() => {
@@ -12,8 +11,7 @@ const modalClose = () => {
 };
 
 const openModal = () => {
-  document.body.style.position = "fixed";
-  document.body.style.top = `-${window.scrollY}px`;
+  document.body.style = "overflow-y:hidden";
   modal.classList.add("scrollLock");
   modal.classList.remove("fadeOut");
   modal.classList.add("fadeIn");
