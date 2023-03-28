@@ -164,59 +164,33 @@
             class="text-sm font-medium text-center text-gray-500 dark:text-gray-400 dark:border-gray-700 max-h-[80vw] flex justify-center"
           >
             <!-- need to make tabs work without refreshing -->
-            <ul class="flex flex-wrap -mb-px">
-              <li class="mr-2">
-                <a
-                  href="#"
-                  class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                  >La Liga</a
-                >
-              </li>
-              <li class="mr-2">
-                <a
-                  href="#"
-                  class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
-                  aria-current="page"
-                  >Me</a
-                >
-              </li>
-              <li class="mr-2">
-                <a
-                  href="#"
-                  class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                  >Me</a
-                >
-              </li>
-              <li class="mr-2">
-                <a
-                  href="#"
-                  class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                  >Me</a
-                >
-              </li>
-            </ul>
-          </div>
+            
 
+
+<div class="tabset w-[100%]">
+  <!-- Tab 1 -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+  <label for="tab1">Märzen</label>
+  <!-- Tab 2 -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+  <label for="tab2">Rauchbier</label>
+  <!-- Tab 3 -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+  <label for="tab3">Dunkles Bock</label>
+  
+  <div class="tab-panels">
+  
+    <section id="rauchbier" class="tab-panel">
+      
           <!-- Add Games Dynamically -->
-          <div class="flex w-full flex-wrap justify-center mt-[10px] mx-auto">
-            <div
-              class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
-              onclick="openModal()"
-            >
+ <div class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none" onclick="openModal()">
               Text
             </div>
-            <div
-              class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
-            >
-              Text
-            </div>
-            <div
-              class="[word-wrap: break-word] my-[5px] flex h-[80px] min-w-[95%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
-            >
-              Text
-            </div>
-
-            <!-- modal -->
+    </section>
+  </div>
+  
+</div>
+ <!-- modal -->
             <div
               class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
               style="background: rgba(0, 0, 0, 0.7)"
@@ -278,7 +252,8 @@
                 </div>
               </div>
             </div>
-          </div>
+
+         
         </div>
       </div>
     </main>
