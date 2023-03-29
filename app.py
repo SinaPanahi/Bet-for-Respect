@@ -67,7 +67,10 @@ class Comments(db.Model):
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    # hitting index for testing purpose
+    return render_template('index.html')
+
+    # return render_template('home.html')
 
 @app.route('/register', methods=['GET','POST'])
 def register():
