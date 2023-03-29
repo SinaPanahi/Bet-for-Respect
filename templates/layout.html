@@ -15,9 +15,14 @@
         <h1>Header</h1>
         <nav>
             <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            {% if 'username' in session %}
+            <a href="{{ url_for('logout') }}">Log Out</a>
+            <a href="{{ url_for('users', username=session['username'].lower())}}">User</a>
+            {% else %}
             <a href="{{ url_for('register') }}">Register</a>
             <a href="{{ url_for('login') }}">Log In</a>
-            <a href="{{ url_for('logout') }}">Log Out</a>
+            {% endif %}
         </nav>
     </header>
     <main>

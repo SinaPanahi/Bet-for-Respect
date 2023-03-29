@@ -80,30 +80,40 @@ def register():
         user = Users(username, email, password)
         db.session.add(user)
         db.session.commit()
-        session.user = user
+        session['username'] = user.username
+        session['email'] = user.email
         return render_template('login.html')
     
 @app.route('/login', methods=['GET','POST'])
 def login():
-    if request.method == 'GET' and not 'user' in session:
+    if request.method == 'GET' and not 'username' in session:
         return render_template('login.html')
-    elif request.method == 'GET' and 'user' in session:
+    elif request.method == 'GET' and 'username' in session:
         return redirect(url_for('home'))
-    elif request.method == 'POST' and not 'user' in session:
+    elif request.method == 'POST' and not 'username' in session:
         email = request.form['email']
-        password = generate_password_hash(request.form['password'])
-        found_user = Users.query.filter_by(email = email).first()
-        db.session.add(found_user)
-        db.session.commit()
-        if(check_password_hash(found_user.password, password)):
-            session.user = found_user
+        password = request.form['password']
+        user = Users.query.filter_by(email = email).first()
+        if(check_password_hash(user.password, password)):
+            session['username'] = user.username
+            session['email'] = user.email
             return render_template('home.html')
         else:
             return redirect(url_for('login'))
 
 @app.route('/logout')
 def logout():
-    return render_template('logout.html')
+    session.pop('username', None)
+    session.pop('email', None)
+    return redirect(url_for('home'))
+
+@app.route('/users/<username>')
+def users(username):
+    if 'email' in session:
+        username = session['username']
+        return render_template('users.html', username=username.lower())
+    else:
+        return render_template('home.html')
 
 @app.route('/about')
 def about():
