@@ -75,6 +75,7 @@ def home():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    print(request.method)
     if request.method == 'GET':
         return render_template('register.html')
     elif request.method == 'POST':
@@ -86,23 +87,25 @@ def register():
         db.session.commit()
         session['username'] = user.username
         session['email'] = user.email
-        return render_template('login.html')
+        return redirect(url_for('login'))
+        # return render_template('login.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
     if request.method == 'GET' and not 'username' in session:
         return render_template('login.html')
     elif request.method == 'GET' and 'username' in session:
         return redirect(url_for('home'))
     elif request.method == 'POST' and not 'username' in session:
         email = request.form['email']
-        password = generate_password_hash(request.form['password'])
-        found_user = Users.query.filter_by(email=email).first()
-        db.session.add(found_user)
-        db.session.commit()
-        if (check_password_hash(found_user.password, password)):
-            session.user = found_user
+        password = request.form['password']
+        user = Users.query.filter_by(email=email).first()
+        if (check_password_hash(user.password, password)):
+            session['username'] = user.username
+            session['email'] = user.email
+            print('s    ')
             return render_template('home.html')
         else:
             return redirect(url_for('login'))

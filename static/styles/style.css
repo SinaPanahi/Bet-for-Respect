@@ -1,16 +1,11 @@
-/* body {
-    background-color: azure;
-} */
-
+/* Modal */
 .animated {
-  -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
+
   animation-fill-mode: both;
 }
 
 .animated.faster {
-  -webkit-animation-duration: 500ms;
   animation-duration: 500ms;
 }
 
@@ -19,12 +14,10 @@ body {
 }
 
 .fadeIn {
-  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 
 .fadeOut {
-  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
 }
 
@@ -48,43 +41,11 @@ body {
   }
 }
 
+/* Carousel */
+
 .carousel {
-  height: 91vh;
   display: grid;
   place-items: center;
-}
-
-.slider {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: all 0.5s;
-}
-
-.slide img {
-  margin: auto;
-  width: 100%;
-  object-fit: contain;
-}
-
-.btn {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 50%;
-  z-index: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  font-size: 18px;
 }
 
 /* tabs */
@@ -159,8 +120,4 @@ body {
 .tab-panel {
   padding: 30px 0;
   border-top: 1px solid #ccc;
-}
-
-footer {
-  margin-top: 10px;
 }
