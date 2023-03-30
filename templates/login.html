@@ -1,11 +1,45 @@
-{% extends "layout.html" %}
-{% block title %} Log In {% endblock %}
-{% block content %}
-<form id="register_form" action="#" method="POST">
+{% extends "layout.html" %} {% block title %} Log In {% endblock %} {% block
+content %}
+<!-- <form id="register_form" action="#" method="POST">
     <p>Email:</p>
     <p><input type="email" name = 'email' ></p>
     <p>Password</p>
     <p><input type="password" name = 'password'></p>
     <p><input type="submit"></p>
-</form>
+</form> -->
+
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+  rel="stylesheet"
+/>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='styles/registration.css') }}"
+/>
+
+<div class="testbox">
+  <h1>Login</h1>
+
+  <form action="/">
+    <hr />
+    <label id="icon" for="email"><i class="icon-envelope"></i></label>
+    <input type="text" name="email" id="email" placeholder="Email" required />
+    <label id="icon" for="password"><i class="icon-shield"></i></label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Password"
+      required
+    />
+
+    <a href="#" class="button">Login</a>
+  </form>
+</div>
 {% endblock %}
