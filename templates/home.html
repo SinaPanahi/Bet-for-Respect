@@ -1,177 +1,282 @@
-{% extends "layout.html" %} 
-{% block title %} Home {% endblock %} 
-{% block content %}
-  <!-- carousel -->
-  <!-- Need to improve size with responsive rather than viewport -->
-  <!-- need to write code to make carousel work -->
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block
+content %}
+<!-- carousel -->
+<!-- Need to improve size with responsive rather than viewport -->
+<!-- need to write code to make carousel work -->
 <div class="carousel min-h-[91vh]">
-    <div class="slider w-[100%] h-[100%] relative overflow-hidden">
-      <div class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300">
-        <img
-          src="https://source.unsplash.com/random?landscape,mountain"
-          alt="" class="mx-auto object-contain w-[100%]"
-        />
-      </div>
-
-      <div class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300">
-        <img src="https://source.unsplash.com/random?landscape,cars" alt="" class="mx-auto object-contain w-[100%]" />
-      </div>
-
-      <div class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300">
-        <img src="https://source.unsplash.com/random?landscape,night" alt="" class="mx-auto object-contain w-[100%]" />
-      </div>
-
-      <!-- Control buttons -->
-      <button
-        class="btn-prev absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-        type="button"
-      >
-        <span class="inline-block h-8 w-8">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 19.5L8.25 12l7.5-7.5"
-            />
-          </svg>
-        </span>
-        <span
-          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-          >Previous</span
-        >
-      </button>
-      <button
-        class="btn-next absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-        type="button"
-      >
-        <span class="inline-block h-8 w-8">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8.25 4.5l7.5 7.5-7.5 7.5"
-            />
-          </svg>
-        </span>
-        <span
-          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-          >Next</span
-        >
-      </button>
-    </div>
-</div>
-
-  <!-- Tabs -->
-<div>
-    <!-- Need to improve size with responsive rather than viewport -->
+  <div class="slider w-[100%] h-[100%] relative overflow-hidden">
     <div
-      class="container mx-auto max-w-[90vw] rounded mt-[20px] min-h-[50vh] border-2 border-gray-300"
+      class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300"
     >
-      <div
-        class="text-sm font-medium text-center text-gray-500 dark:text-gray-400 dark:border-gray-700 max-h-[80vw] flex justify-center"
+      <img
+        src="https://source.unsplash.com/random?landscape,mountain"
+        alt=""
+        class="mx-auto object-contain w-[100%]"
+      />
+    </div>
+
+    <div
+      class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300"
+    >
+      <img
+        src="https://source.unsplash.com/random?landscape,cars"
+        alt=""
+        class="mx-auto object-contain w-[100%]"
+      />
+    </div>
+
+    <div
+      class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300"
+    >
+      <img
+        src="https://source.unsplash.com/random?landscape,night"
+        alt=""
+        class="mx-auto object-contain w-[100%]"
+      />
+    </div>
+
+    <!-- Control buttons -->
+    <button
+      class="btn-prev absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+      type="button"
+    >
+      <span class="inline-block h-8 w-8">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </span>
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+        >Previous</span
       >
-        <!-- need to make tabs work without refreshing -->
-
-        <div class="tabset w-[100%]">
-
-<div class="border-b border-gray-200  mb-4">
-  <button class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-blue-500 border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="profile-tab" aria-selected="true" onclick="openTab(event, 'London')">London</button>
-  <button class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="profile-tab" onclick="openTab(event, 'Paris')">Paris</button>
-  <button class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="profile-tab" onclick="openTab(event, 'Tokyo')">Tokyo</button>
+    </button>
+    <button
+      class="btn-next absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+      type="button"
+    >
+      <span class="inline-block h-8 w-8">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </span>
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+        >Next</span
+      >
+    </button>
+  </div>
 </div>
 
+<!-- Tabs -->
+<div>
+  <!-- Need to improve size with responsive rather than viewport -->
+  <div
+    class="container mx-auto max-w-[90vw] rounded mt-[20px] min-h-[50vh] border-2 border-gray-300"
+  >
+    <div
+      class="text-sm font-medium text-center text-gray-500 dark:text-gray-400 dark:border-gray-700 max-h-[80vw] flex justify-center"
+    >
+      <!-- need to make tabs work without refreshing -->
 
-
-
-          <div class="tab-panels">
-            <section id="London" class="tabcontent">
-              <!-- Add Games Dynamically -->
-              <div
-                class="[word-wrap: break-word] my-[5px] flex h-[80px] mx-auto w-[50%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
-                onclick="openModal()"
-              >
-                Text
-              </div>
-            </section>
-
-            <section id="Paris" class="tabcontent"></section>
-
-            <section id="Londo" class="tabcontent"></section>
-          </div>
-        </div>
-        <!-- modal -->
-        <div
-          class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
-          style="background: rgba(0, 0, 0, 0.7)"
-        >
-          <div
-            class="border border-teal-500 shadow-lg modal-container bg-white w-[90%] max-h-[80%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
+      <div class="tabset w-[100%]">
+        <div class="border-b border-gray-200 mb-4">
+          <button
+            class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-blue-500 border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+            id="profile-tab"
+            aria-selected="true"
+            onclick="openTab(event, 'London')"
           >
-            <div class="modal-content py-4 text-left px-6">
-              <!--Title-->
-              <div class="flex justify-between items-center pb-3 text-center">
-                <p class="text-2xl font-bold">ManUtd v/s Chelsea</p>
+            London
+          </button>
+          <button
+            class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+            id="profile-tab"
+            onclick="openTab(event, 'Paris')"
+          >
+            Paris
+          </button>
+          <button
+            class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+            id="profile-tab"
+            onclick="openTab(event, 'Tokyo')"
+          >
+            Tokyo
+          </button>
+        </div>
 
-                <div class="modal-close cursor-pointer z-50">
-                  <svg
-                    class="fill-current text-black"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                  >
-                    <path
-                      d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
-                    ></path>
-                  </svg>
-                </div>
+        <div class="tab-panels">
+          <section id="London" class="tabcontent">
+            <!-- Add Games Dynamically -->
+            <div
+              class="[word-wrap: break-word] my-[5px] flex h-[80px] mx-auto w-[50%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
+              onclick="openModal()"
+            >
+              Text
+            </div>
+          </section>
+
+          <section id="Paris" class="tabcontent"></section>
+
+          <section id="Londo" class="tabcontent"></section>
+        </div>
+      </div>
+      <!-- modal -->
+      <div
+        class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+        style="background: rgba(0, 0, 0, 0.7)"
+      >
+        <div
+          class="border border-teal-500 shadow-lg modal-container bg-white w-[50%] h-[90%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
+        >
+          <div class="modal-content py-4 text-left px-6">
+            <!--Title-->
+            <div class="flex justify-between items-center pb-3 text-center">
+              <p class="text-gray-300">Mar 14</p>
+
+              <div class="modal-close cursor-pointer z-50">
+                <svg
+                  class="fill-current text-black"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+                  ></path>
+                </svg>
               </div>
-              <!--Body-->
-              <div class="grids-cols-2">
-              <div class="my-5 flex justify-center items-center">
+            </div>
+
+            <!--Body-->
+            <div class="grids-cols-3 gap-2 text-center mt-[5%]">
+              <div
+                class="mb-[4%] flex justify-center align-baseline items-center"
+              >
                 <!-- set img size to be responsive -->
-                <img
-                  class="max-w-[100px] max-h-[100px] object-contain"
-                  src="https://i.pinimg.com/originals/8e/f5/9d/8ef59dc3c90a3abd56c87a5901709132.jpg"
-                  alt=""
-                />
+                <div class="mr-[4%]">
+                  <img
+                    class="max-w-[48px] max-h-[48px] object-contain"
+                    src="https://i.pinimg.com/originals/8e/f5/9d/8ef59dc3c90a3abd56c87a5901709132.jpg"
+                    alt=""
+                  />
+                  <p>Team 1</p>
+                </div>
 
                 <!-- score will be dynamic -->
-                <p>1 <strong>:</strong> 0</p>
-                <img
-                  class="max-w-[100px] max-h-[100px] object-contain"
-                  src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png"
-                  alt=""
-                />
+                <p class="text-[48px]">1 - 0</p>
+                <div class="ml-[4%]">
+                  <img
+                    class="max-w-[48px] max-h-[48px] object-contain ml-[4%]"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png"
+                    alt=""
+                  />
+                  <p>Team 2</p>
+                </div>
               </div>
+              <div
+                class="mx-auto max-w-[85%] border-t-2 border-grey-200 flex justify-between pt-[4%]"
+              >
+                <div>
+                  <p class="text-300 text-gray-300">Team</p>
+                  <p>Team 1</p>
+                  <p>Team 2</p>
+                </div>
+
+                <div class="grid grid-cols-4 gap-2">
+                  <div>
+                    <div class="text-300 text-gray-300">Halftime</div>
+                    <div>0</div>
+                    <div>0</div>
+                  </div>
+
+                  <div>
+                    <div class="text-300 text-gray-300">Fulltime</div>
+                    <div>0</div>
+                    <div>0</div>
+                  </div>
+
+                  <div>
+                    <div class="text-300 text-gray-300">Overtime</div>
+                    <div>0</div>
+                    <div>0</div>
+                  </div>
+
+                  <div>
+                    <div class="text-300 text-gray-300">Penalty</div>
+                    <div>0</div>
+                    <div>0</div>
+                  </div>
+                </div>
               </div>
+
+              <div
+                class="flex justify-between mt-[4%] mx-auto max-w-[85%] border-t-2 border-grey-200 pt-[4%]"
+              >
+                <div>
+                  <p class="text-300 text-gray-300">Team 1</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                </div>
+                <div>
+                  <p class="text-300 text-gray-300">Team Stats</p>
+                  <p>Shots On Goal</p>
+                  <p>Shots Off Goal</p>
+                  <p>Total On Goal</p>
+                  <p>Shots Blocked</p>
+                  <p>Fouls</p>
+                  <p>Corner Kicks</p>
+                  <p>Offside</p>
+                  <p>Ball Possession</p>
+                  <p>Yellow Card</p>
+                  <p>Red Card</p>
+                </div>
+                <div>
+                  <p class="text-300 text-gray-300">Team 1</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                  <p>0</p>
+                </div>
+              </div>
+
               <!--Footer-->
-              <div class="flex justify-end pt-2">
-                <button
-                  class="focus:outline-none modal-close px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300"
-                >
-                  Cancel
-                </button>
-                <button
-                  class="focus:outline-none px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400"
-                >
-                  Confirm
-                </button>
-              </div>
             </div>
           </div>
         </div>
