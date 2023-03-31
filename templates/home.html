@@ -87,29 +87,18 @@
         <!-- need to make tabs work without refreshing -->
 
         <div class="tabset w-[100%]">
-          <!-- Tab 1 -->
-          <input
-            type="radio"
-            name="tabset"
-            id="tab1"
-            aria-controls="marzen"
-            checked
-          />
-          <label for="tab1">Märzen</label>
-          <!-- Tab 2 -->
-          <input
-            type="radio"
-            name="tabset"
-            id="tab2"
-            aria-controls="rauchbier"
-          />
-          <label for="tab2">Rauchbier</label>
-          <!-- Tab 3 -->
-          <input type="radio" name="tabset" id="tab3" aria-controls="dunkles" />
-          <label for="tab3">Dunkles Bock</label>
+
+<div class="border-b border-gray-200  mb-4">
+  <button class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-blue-500 border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="profile-tab" aria-selected="true" onclick="openTab(event, 'London')">London</button>
+  <button class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="profile-tab" onclick="openTab(event, 'Paris')">Paris</button>
+  <button class="tablinks inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="profile-tab" onclick="openTab(event, 'Tokyo')">Tokyo</button>
+</div>
+
+
+
 
           <div class="tab-panels">
-            <section id="marzen" class="tab-panel">
+            <section id="London" class="tabcontent">
               <!-- Add Games Dynamically -->
               <div
                 class="[word-wrap: break-word] my-[5px] flex h-[80px] mx-auto w-[50%] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none"
@@ -119,9 +108,9 @@
               </div>
             </section>
 
-            <section id="rauchbier" class="tab-panel"></section>
+            <section id="Paris" class="tabcontent"></section>
 
-            <section id="dunkles" class="tab-panel"></section>
+            <section id="Londo" class="tabcontent"></section>
           </div>
         </div>
         <!-- modal -->

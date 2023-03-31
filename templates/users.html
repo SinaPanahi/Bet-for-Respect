@@ -1,5 +1,18 @@
-{% extends "layout.html" %}
-{% block title %} Register {% endblock %}
-{% block content %}
-<p>details for user "{{session['username']}}" here</p>
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
+content %}
+
+<div class="border-b-2 relative mb-[8%]">
+  <div
+    class="min-h-[200px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+  ></div>
+  <img
+    src="../static/images/logo.jpeg"
+    alt=""
+    class="rounded-md h-[200px] w-[200px] border-2 border-white-500 absolute bottom-[-50%] left-[6%]"
+  />
+</div>
+
+<div class="max-w-[90%] mx-auto px-[1%]">
+  <p class="text-2xl">{{session['username']}}</p>
+</div>
 {% endblock %}
