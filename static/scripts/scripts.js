@@ -91,11 +91,9 @@ function openTab(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(
-      "border-blue-500",
-      "b-0"
-    );
+    tablinks[i].classList.toggle("border-blue-500");
   }
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(cityName).style.display = "grid";
+
   evt.currentTarget.className.add = "border-blue-500";
 }
