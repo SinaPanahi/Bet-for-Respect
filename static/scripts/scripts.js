@@ -84,18 +84,25 @@ prevSlide.addEventListener("click", function () {
 //
 
 function openTab(cityName) {
-  let i, tabcontent, tablinks;
+  let i, tabcontent;
+  let tablinks = document.querySelectorAll(".tablinks");
+  console.log(tablinks);
+  console.log(``);
+  let tablink = document.querySelector(`.${cityName.toLowerCase()}-tab`);
+  console.log(tablink);
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.toggle("border-blue-500");
-  }
-  document.getElementById(cityName).style.display = "grid";
 
-  evt.currentTarget.className.add = "border-blue-500";
+  for (i = 0; i < tabcontent.length; i++) {
+    tablinks[i].classList.remove("border-b-2");
+    tablinks[i].classList.remove("border-blue-500");
+  }
+
+  tablink.classList.toggle("border-b-2");
+  tablink.classList.toggle("border-blue-500");
+  document.getElementById(cityName).style.display = "grid";
 }
 
 openTab("London");
