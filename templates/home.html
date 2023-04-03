@@ -3,8 +3,8 @@ content %}
 <!-- carousel -->
 <!-- Need to improve size with responsive rather than viewport -->
 <!-- need to write code to make carousel work -->
-<div class="carousel min-h-[91vh]">
-  <div class="slider w-[100%] h-[100%] relative overflow-hidden">
+<div class="carousel lg:min-h-[91vh] min-h-[50vh]">
+  <div class="slider w-[100%] lg:h-[100%] h-[70%] relative overflow-hidden">
     <div
       class="slide w-[100%] h-[100%] absolute transition-all ease-in-out duration-300"
     >
@@ -90,20 +90,20 @@ content %}
 </div>
 
 <!-- Tabs -->
-<div>
+<div class="mx-auto max-w-[90vw] mt-[5%]">
+  <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Games</h2>
+
   <!-- Need to improve size with responsive rather than viewport -->
-  <div
-    class="container mx-auto max-w-[90vw] rounded mt-[20px] border-2 border-gray-300"
-  >
+  <div class="container w-[100%] rounded mt-[20px] mx-auto">
     <div
       class="text-sm font-medium text-center text-gray-500 dark:text-gray-400 dark:border-gray-700 flex justify-center"
     >
       <!-- need to make tabs work without refreshing -->
 
       <div class="tabset w-[100%]">
-        <div class="border-b border-gray-200 mb-4">
+        <div class="border-b border-gray-200">
           <button
-            class="tablinks london-tab inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
+            class="tablinks london-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
             id="profile-tab"
             aria-selected="true"
             onclick="openTab('London')"
@@ -111,14 +111,14 @@ content %}
             London
           </button>
           <button
-            class="tablinks paris-tab inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
+            class="tablinks paris-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
             id="profile-tab"
             onclick="openTab('Paris')"
           >
             Paris
           </button>
           <button
-            class="tablinks tokyo-tab inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
+            class="tablinks tokyo-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
             id="profile-tab"
             onclick="openTab('Tokyo')"
           >
@@ -126,174 +126,178 @@ content %}
           </button>
         </div>
 
-        <div class="max-w-[55%] mx-auto mb-[5%]">
-          <section id="London" class="tabcontent grid grid-cols-2">
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+        <div
+          class="w-full border-l border-r border-gray-200 pt-[5%] pb-[5%] border-b"
+        >
+          <div class="max-w-[55%] mx-auto">
+            <section id="London" class="tabcontent lg:grid lg:grid-cols-2">
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section id="Paris" class="tabcontent grid grid-cols-2">
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+            </section>
+            <section id="Paris" class="tabcontent lg:grid lg:grid-cols-2">
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section id="Tokyo" class="tabcontent grid grid-cols-2">
-            <div
-              class="[word-wrap: break-word] flex mx-auto w-[380px] h-[130px] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
-              onclick="openModal()"
-            >
-              <div class="flex justify-between w-full align-baseline">
-                <div
-                  class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
-                >
-                  <div class="flex flex-col">
-                    <p>Team 1</p>
-                    <p>Team 2</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <p>Score</p>
+            </section>
+            <section id="Tokyo" class="tabcontent lg:grid lg:grid-cols-2">
+              <div
+                class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
+                onclick="openModal()"
+              >
+                <div class="flex justify-between w-full align-baseline py-2">
+                  <div
+                    class="w-[80%] flex justify-between border-r-2 pr-[1em] border-gray-400"
+                  >
+                    <div class="flex flex-col">
+                      <p>Team 1</p>
+                      <p>Team 2</p>
+                    </div>
+                    <div class="flex flex-col">
+                      <p>Score</p>
 
-                    <p>Score</p>
+                      <p>Score</p>
+                    </div>
                   </div>
-                </div>
-                <div class="flex align-middle min-h-[100%]">
-                  <p class="my-auto">Date</p>
+                  <div class="flex align-middle min-h-[100%]">
+                    <p class="my-auto">Date</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
       <!-- modal -->
@@ -302,7 +306,7 @@ content %}
         style="background: rgba(0, 0, 0, 0.7)"
       >
         <div
-          class="border border-teal-500 shadow-lg modal-container bg-white w-[40%] h-[90%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
+          class="border border-teal-500 shadow-lg modal-container bg-white w-[40%] h-[95%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
         >
           <div class="modal-content py-4 text-left px-6">
             <!--Title-->
@@ -485,7 +489,7 @@ content %}
 >
   <div class="grid grid-cols-2 row-gap-8 md:grid-cols-4">
     <div class="text-center md:border-r">
-      <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">4+</h6>
+      <h6 class="text-xl font-bold lg:text-xl xl:text-4xl">4+</h6>
       <p
         class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base"
       >
@@ -493,7 +497,7 @@ content %}
       </p>
     </div>
     <div class="text-center md:border-r">
-      <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">3%</h6>
+      <h6 class="text-xl font-bold lg:text-2xl xl:text-4xl">3%</h6>
       <p
         class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base"
       >
@@ -501,7 +505,7 @@ content %}
       </p>
     </div>
     <div class="text-center md:border-r">
-      <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">99.9%</h6>
+      <h6 class="text-xl font-bold lg:text-2xl xl:text-4xl">99.9%</h6>
       <p
         class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base"
       >
@@ -509,7 +513,7 @@ content %}
       </p>
     </div>
     <div class="text-center">
-      <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">0$</h6>
+      <h6 class="text-xl font-bold lg:text-2xl xl:text-4xl">0$</h6>
       <p
         class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base"
       >
