@@ -1,4 +1,6 @@
 from flask import Flask, current_app, render_template, url_for, request, session, flash, redirect
+from datetime import datetime, date, timedelta
+import urllib.request, json
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import String, Integer, Enum, Text, DateTime, Column
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -32,27 +34,20 @@ class Users(db.Model):
 
 
 class Games(db.Model):
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    status = Column(Enum('future', 'now', 'past'))
-    description = Column(Text, nullable=False, default='desc')
+    id = Column(Integer, primary_key=True)
+    status = Column(Enum('future', 'past'), default='future')
     start = Column(DateTime, nullable=False)
-    end = Column(DateTime, nullable=False)
     team_1 = Column(Text, nullable=False)
     team_2 = Column(Text, nullable=False)
     score_1 = Column(Integer, default=0, nullable=False)
     score_2 = Column(Integer, default=0, nullable=False)
     winner = Column(Text, nullable=True)
 
-    def __init__(self, status, description, start, end, team_1, team_2, score_1, score_2, winner):
-        self.status = status,
-        self.description = description,
-        self.start = start,
-        self.end = end,
-        self.team_1 = team_1,
-        self.team_2 = team_2,
-        self.score_1 = score_1,
-        self.score_2 = score_2,
-        self.winner = winner
+    def __init__(self, id, start, team_1, team_2):
+        self.id = id
+        self.start = start
+        self.team_1 = team_1
+        self.team_2 = team_2
 
 
 class Comments(db.Model):
@@ -62,20 +57,41 @@ class Comments(db.Model):
     posted = Column(DateTime, nullable=False)
 
     def __init__(self, user_id, game_id, posted):
-        self.user_id = user_id,
-        self.game_id = game_id,
+        self.user_id = user_id
+        self.game_id = game_id
         self.posted = posted
 
 
 @app.route('/')
 @app.route('/home')
 def home():
+    # Sina: had to do my fetching here, because I need to include the data in the DB as well as pass them to the 
+    # view to be displayed.
+    response = urllib.request.urlopen(f"https://statsapi.web.nhl.com/api/v1/schedule?startDate={getTomorrowDate()}&endDate={getNextWeekDate()}")
+    data = response.read()  
+    oneWeekSchedule = json.dumps(json.loads(data))
+    # Sina: the data received are passed into the session variable to be used in the view for displaying.
+    session['oneWeekSchedule'] = oneWeekSchedule
+    data = json.loads(data)
+    for date in data['dates']:
+        for game in date['games']:
+            # Sina: if the game is not already in the DB, insert it
+            if (not Games.query.filter_by(id=game['gamePk']).first()):
+                id = game['gamePk']
+                start = datetime.date.fromisoformat(game['gameDate'][0:10]) 
+                team_1 = game['teams']['home']['team']['name']
+                team_2 = game['teams']['away']['team']['name']
+                entry = Games(id, start, team_1, team_2)
+                db.session.add(entry)
+                db.session.commit()
+    # sina: now, need to check all the games in the DB and see if they have ended. 
+    # If the game has ended update their status in Games table and display the most recent
+    # ones in the ended games section under them future games.
     return render_template('home.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    print(request.method)
     if request.method == 'GET':
         return render_template('register.html')
     elif request.method == 'POST':
@@ -88,12 +104,11 @@ def register():
         session['username'] = user.username
         session['email'] = user.email
         return redirect(url_for('login'))
-        # return render_template('login.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-
+    
     if request.method == 'GET' and not 'username' in session:
         return render_template('login.html')
     elif request.method == 'GET' and 'username' in session:
@@ -130,6 +145,17 @@ def users(username):
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+# Functions
+def getTomorrowDate():
+    tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
+    return tomorrow.date()
+
+def getNextWeekDate():
+    tomorrow = datetime.datetime.now() + datetime.timedelta(days=7)
+    return tomorrow.date()
+
+
 
 
 # Debug Mode: On during development

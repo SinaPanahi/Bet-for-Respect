@@ -55,3 +55,15 @@ body {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+/* Sina: game-schedules display on home page */
+#game-schedules{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+#game-schedules .game-schedule{
+  padding: 10px;
+  border: 1px solid black;
+}

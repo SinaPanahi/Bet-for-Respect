@@ -91,7 +91,10 @@ content %}
 
 <!-- Tabs -->
 <div class="mx-auto max-w-[90vw] mt-[5%]">
-  <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Games</h2>
+  <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Scheduled Games for the Week</h2>
+  <!-- SINA: Added this here to put the game data fetched from the games schedule API -->
+  <div data-oneWeekSchedule="{{session['oneWeekSchedule']}}" id="game-schedules" class="container w-[100%] rounded mt-[20px] mx-auto">
+  </div>
 
   <!-- Need to improve size with responsive rather than viewport -->
   <div class="container w-[100%] rounded mt-[20px] mx-auto">
@@ -306,12 +309,12 @@ content %}
         style="background: rgba(0, 0, 0, 0.7)"
       >
         <div
-          class="border border-teal-500 shadow-lg modal-container bg-white w-[40%] h-[95%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
+          class="border border-teal-500 shadow-lg modal-container bg-white w-[40%] h-[50%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
         >
           <div class="modal-content py-4 text-left px-6">
             <!--Title-->
             <div class="flex justify-between items-center pb-3 text-center">
-              <p class="text-gray-300">Mar 14</p>
+              <p id="scheduled-game-date" class="text-gray-300">scheduled-game-date</p>
 
               <div class="modal-close cursor-pointer z-50">
                 <svg
@@ -336,101 +339,65 @@ content %}
                 <!-- set img size to be responsive -->
                 <div class="mr-[4%]">
                   <img
+                    id="scheduled-hometeam-flag"
                     class="max-w-[48px] max-h-[48px] object-contain"
-                    src="https://i.pinimg.com/originals/8e/f5/9d/8ef59dc3c90a3abd56c87a5901709132.jpg"
+                    src="scheduled-hometeam-flag"
                     alt=""
                   />
-                  <p>Team 1</p>
+                  <p id="scheduled-hometeam-name">scheduled-hometeam-name</p>
                 </div>
 
                 <!-- score will be dynamic -->
-                <p class="text-[48px]">1 - 0</p>
+                <p class="text-[48px]">Vs.</p>
                 <div class="ml-[4%]">
                   <img
+                    id="scheduled-awayteam-flag"
                     class="max-w-[48px] max-h-[48px] object-contain ml-[4%]"
-                    src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png"
+                    src="scheduled-awayteam-flag"
                     alt=""
                   />
-                  <p>Team 2</p>
+                  <p id="scheduled-awayteam-name">scheduled-awayteam-name</p>
                 </div>
               </div>
               <div
                 class="mx-auto max-w-[85%] border-t-2 border-grey-200 flex justify-between pt-[4%]"
               >
                 <div>
-                  <p class="text-300 text-gray-300">Team</p>
-                  <p>Team 1</p>
-                  <p>Team 2</p>
+                  <p class="text-300 text-gray-300">Teams</p>
+                  <br>
+                  <p id="stats-hometeam-name">stats-hometeam-name</p>
+                  <!-- Sina: this here just to add space -->
+                  <br>
+                  <p id="stats-awayteam-name">stats-awayteam-name</p>
                 </div>
 
-                <div class="grid grid-cols-4 gap-2">
+                <div class="grid grid-cols-3 gap-2">
                   <div>
-                    <div class="text-300 text-gray-300">Halftime</div>
-                    <div>0</div>
-                    <div>0</div>
+                    <div class="text-300 text-gray-300">Wins</div>
+                    <br>
+                    <p id="state-hometeam-wins">state-hometeam-wins</p>
+                    <!-- Sina: this here just to add space -->
+                    <br>
+                    <p id="state-awayteam-wins">state-awayteam-wins</p>
                   </div>
 
                   <div>
-                    <div class="text-300 text-gray-300">Fulltime</div>
-                    <div>0</div>
-                    <div>0</div>
+                    <div class="text-300 text-gray-300">Losses</div>
+                    <br>
+                    <p id="stats-hometeam-losses">stats-hometeam-losses</p>
+                    <!-- Sina: this here just to add space -->
+                    <br>
+                    <p id="stats-awayteam-losses">stats-awayteam-losses</p>
                   </div>
 
                   <div>
-                    <div class="text-300 text-gray-300">Overtime</div>
-                    <div>0</div>
-                    <div>0</div>
+                    <div class="text-300 text-gray-300">OT</div>
+                    <br>  
+                    <div id="stats-hometeam-ot">stats-hometeam-ot</div>
+                    <!-- Sina: this here just to add space -->
+                    <br>
+                    <div id="stats-awayteam-ot">stats-awayteam-ot</div>
                   </div>
-
-                  <div>
-                    <div class="text-300 text-gray-300">Penalty</div>
-                    <div>0</div>
-                    <div>0</div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="flex justify-between mt-[4%] mx-auto max-w-[85%] border-t-2 border-grey-200 pt-[4%]"
-              >
-                <div>
-                  <p class="text-300 text-gray-300">Team 1</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                </div>
-                <div>
-                  <p class="text-300 text-gray-300">Team Stats</p>
-                  <p>Shots On Goal</p>
-                  <p>Shots Off Goal</p>
-                  <p>Total On Goal</p>
-                  <p>Shots Blocked</p>
-                  <p>Fouls</p>
-                  <p>Corner Kicks</p>
-                  <p>Offside</p>
-                  <p>Ball Possession</p>
-                  <p>Yellow Card</p>
-                  <p>Red Card</p>
-                </div>
-                <div>
-                  <p class="text-300 text-gray-300">Team 1</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
-                  <p>0</p>
                 </div>
               </div>
 
