@@ -106,3 +106,35 @@ function openTab(cityName) {
 }
 
 openTab("London");
+
+// form validation
+
+const loginBtn = document.querySelector(".login-btn");
+console.log(loginBtn);
+
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  console.log("yo");
+  if (!validateform()) {
+    console.log("yo");
+  }
+  console.log("yp");
+});
+
+function validateform() {
+  let validate = true;
+  let inputs = document.querySelectorAll(".login-input");
+
+  inputs.forEach(function (e) {
+    if (e.value.length == "0") {
+      console.log("yo");
+      validate = false;
+      e.classList.toggle("outline ");
+      e.classList.toggle("outline-offset-2");
+      e.classList.toggle("outline-red");
+    }
+  });
+
+  return validate;
+}

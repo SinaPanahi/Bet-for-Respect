@@ -3,6 +3,10 @@ content %}
 <!-- carousel -->
 <!-- Need to improve size with responsive rather than viewport -->
 <!-- need to write code to make carousel work -->
+<script
+  src="{{ url_for('static', filename='scripts/scripts.js') }}"
+  defer
+></script>
 <div class="carousel lg:min-h-[91vh] min-h-[50vh]">
   <div class="slider w-[100%] lg:h-[100%] h-[70%] relative overflow-hidden">
     <div
@@ -306,7 +310,7 @@ content %}
         style="background: rgba(0, 0, 0, 0.7)"
       >
         <div
-          class="border border-teal-500 shadow-lg modal-container bg-white w-[40%] h-[95%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
+          class="border border-teal-500 shadow-lg modal-container text-[10px] lg:text-[14px] lg:leading-6 bg-white w-[95%] lg:w-[40%] lg:h-[95%] mx-auto rounded shadow-lg z-50 overflow x-hidden overflow-y-auto"
         >
           <div class="modal-content py-4 text-left px-6">
             <!--Title-->
