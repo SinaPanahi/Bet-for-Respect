@@ -21,18 +21,6 @@
   </head>
   <body>
     <header>
-      <!-- <h1>Header</h1>
-      <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('about') }}">About</a>
-            {% if 'username' in session %}
-            <a href="{{ url_for('logout') }}">Log Out</a>
-            <a href="{{ url_for('users', username=session['username'].lower())}}">User</a>
-            {% else %}
-            <a href="{{ url_for('register') }}">Register</a>
-            <a href="{{ url_for('login') }}">Log In</a>
-            {% endif %}
-        </nav> -->
       <nav
         class="bg-white-800 flex p-5 flex justify-between flex space-x-2 w-[90vw] mx-auto"
       >
@@ -59,9 +47,8 @@
             </svg>
           </div>
         </a>
-        <div class="">
+        <div class="pl-[2%]">
           <a href="{{ url_for('home') }}">Home</a>
-          <a href="#">Yo</a>
           <a href="{{ url_for('about') }}">About</a>
         </div>
         <div class="flex">

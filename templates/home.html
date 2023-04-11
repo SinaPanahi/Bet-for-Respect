@@ -91,10 +91,15 @@ content %}
 
 <!-- Tabs -->
 <div class="mx-auto max-w-[90vw] mt-[5%]">
-  <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Scheduled Games for the Week</h2>
+  <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
+    Scheduled Games for the Week
+  </h2>
   <!-- SINA: Added this here to put the game data fetched from the games schedule API -->
-  <div data-oneWeekSchedule="{{session['oneWeekSchedule']}}" id="game-schedules" class="container w-[100%] rounded mt-[20px] mx-auto">
-  </div>
+  <div
+    data-oneWeekSchedule="{{session['oneWeekSchedule']}}"
+    id="game-schedules"
+    class="container w-[100%] rounded mt-[20px] mx-auto"
+  ></div>
 
   <!-- Need to improve size with responsive rather than viewport -->
   <div class="container w-[100%] rounded mt-[20px] mx-auto">
@@ -106,26 +111,26 @@ content %}
       <div class="tabset w-[100%]">
         <div class="border-b border-gray-200">
           <button
-            class="tablinks london-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
+            class="tablinks leaguea-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
             id="profile-tab"
             aria-selected="true"
-            onclick="openTab('London')"
+            onclick="openTab('LeagueA')"
           >
-            London
+            LeagueA
           </button>
           <button
-            class="tablinks paris-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
+            class="tablinks leagueb-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
             id="profile-tab"
-            onclick="openTab('Paris')"
+            onclick="openTab('LeagueB')"
           >
-            Paris
+            LeagueB
           </button>
           <button
-            class="tablinks tokyo-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
+            class="tablinks leaguec-tab inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center dark:text-gray-400 dark:hover:text-gray-300"
             id="profile-tab"
-            onclick="openTab('Tokyo')"
+            onclick="openTab('LeagueC')"
           >
-            Tokyo
+            LeagueC
           </button>
         </div>
 
@@ -133,7 +138,7 @@ content %}
           class="w-full border-l border-r border-gray-200 pt-[5%] pb-[5%] border-b"
         >
           <div class="max-w-[55%] mx-auto">
-            <section id="London" class="tabcontent lg:grid lg:grid-cols-2">
+            <section id="LeagueA" class="tabcontent lg:grid lg:grid-cols-2">
               <div
                 class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
                 onclick="openModal()"
@@ -181,7 +186,7 @@ content %}
                 </div>
               </div>
             </section>
-            <section id="Paris" class="tabcontent lg:grid lg:grid-cols-2">
+            <section id="LeagueB" class="tabcontent lg:grid lg:grid-cols-2">
               <div
                 class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
                 onclick="openModal()"
@@ -275,7 +280,7 @@ content %}
                 </div>
               </div>
             </section>
-            <section id="Tokyo" class="tabcontent lg:grid lg:grid-cols-2">
+            <section id="LeagueC" class="tabcontent lg:grid lg:grid-cols-2">
               <div
                 class="[word-wrap: break-word] flex mx-auto w-[100%] cursor-pointer items-center justify-between bg-[#eceff1] py-0 px-[12px] text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none border-2 border-gray-300"
                 onclick="openModal()"
@@ -314,7 +319,9 @@ content %}
           <div class="modal-content py-4 text-left px-6">
             <!--Title-->
             <div class="flex justify-between items-center pb-3 text-center">
-              <p id="scheduled-game-date" class="text-gray-300">scheduled-game-date</p>
+              <p id="scheduled-game-date" class="text-gray-300">
+                scheduled-game-date
+              </p>
 
               <div class="modal-close cursor-pointer z-50">
                 <svg
@@ -364,38 +371,38 @@ content %}
               >
                 <div>
                   <p class="text-300 text-gray-300">Teams</p>
-                  <br>
+                  <br />
                   <p id="stats-hometeam-name">stats-hometeam-name</p>
                   <!-- Sina: this here just to add space -->
-                  <br>
+                  <br />
                   <p id="stats-awayteam-name">stats-awayteam-name</p>
                 </div>
 
                 <div class="grid grid-cols-3 gap-2">
                   <div>
                     <div class="text-300 text-gray-300">Wins</div>
-                    <br>
+                    <br />
                     <p id="state-hometeam-wins">state-hometeam-wins</p>
                     <!-- Sina: this here just to add space -->
-                    <br>
+                    <br />
                     <p id="state-awayteam-wins">state-awayteam-wins</p>
                   </div>
 
                   <div>
                     <div class="text-300 text-gray-300">Losses</div>
-                    <br>
+                    <br />
                     <p id="stats-hometeam-losses">stats-hometeam-losses</p>
                     <!-- Sina: this here just to add space -->
-                    <br>
+                    <br />
                     <p id="stats-awayteam-losses">stats-awayteam-losses</p>
                   </div>
 
                   <div>
                     <div class="text-300 text-gray-300">OT</div>
-                    <br>  
+                    <br />
                     <div id="stats-hometeam-ot">stats-hometeam-ot</div>
                     <!-- Sina: this here just to add space -->
-                    <br>
+                    <br />
                     <div id="stats-awayteam-ot">stats-awayteam-ot</div>
                   </div>
                 </div>
@@ -495,7 +502,7 @@ content %}
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        More in the world of football
+        More in the world of hockey
       </h2>
     </div>
     <div
