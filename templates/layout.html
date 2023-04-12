@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -23,7 +23,9 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body class="dark:bg-neutral-600">
-    <header class="bg-white dark:bg-neutral-800 dark:text-neutral-200">
+    <header
+      class="bg-white dark:bg-neutral-800 dark:text-neutral-200 bg-neutral-200"
+    >
       <nav
         class="flex p-5 flex justify-between flex space-x-2 w-[90vw] mx-auto"
       >
@@ -86,12 +88,16 @@
                   </a>
                 </li>
                 <li class="">
-                  <a
-                    class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                    href="#"
+                  <div
+                    class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex align-baseline"
                   >
-                    DarkMode
-                  </a>
+                    <a class="mr-[1%]" href="#"> DarkMode </a>
+                    <input
+                      type="checkbox"
+                      id="switch-toggle"
+                      onchange="switchTheme()"
+                    />
+                  </div>
                 </li>
                 <li class="">
                   <a

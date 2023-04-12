@@ -197,12 +197,36 @@ function openScheduledGameOnClick() {
   });
 }
 
+const html = document.documentElement;
+
+const switchToggle = document.querySelector("#switch-toggle");
+let isDarkmode = false;
+
+function switchTheme() {
+  const switchToggle = document.querySelector("#switch-toggle");
+  if (switchToggle.checked) {
+    html.classList.add("dark");
+  } else {
+    html.classList.remove("dark");
+  }
+}
+
+switchToggle.addEventListener("click", switchTheme());
+
+// function toggleTheme() {
+//   isDarkmode = !isDarkmode;
+//   localStorage.setItem("isDarkmode", isDarkmode);
+//   switchTheme();
+// }
+
+switchTheme();
+
 // Sina: Python fetches the data at the controller level in app.py. Data is first written as Jason string on the
 // data attribute of #game-schedules div.
 // Data are fetched in the backend so that they can be insterted into DB.
-const dataSource = document.querySelector("#game-schedules");
-const oneWeekSchedule = JSON.parse(dataSource.dataset.oneweekschedule);
-console.log("🚀 ~ file: scripts.js:194 ~ oneWeekSchedule:", oneWeekSchedule);
+// const dataSource = document.querySelector("#game-schedules");
+// const oneWeekSchedule = JSON.parse(dataSource.dataset.oneweekschedule);
+// console.log("🚀 ~ file: scripts.js:194 ~ oneWeekSchedule:", oneWeekSchedule);
 
-displayGameSchedule(oneWeekSchedule);
-openScheduledGameOnClick();
+// displayGameSchedule(oneWeekSchedule);
+// openScheduledGameOnClick();
