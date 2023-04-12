@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -11,7 +11,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/style.css') }}"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/css/output.css')}}"
+    />
     <script
       src="{{ url_for('static', filename='scripts/scripts.js') }}"
       defer
@@ -19,10 +22,10 @@
 
     <title>{% block title %}{% endblock %}</title>
   </head>
-  <body>
-    <header>
+  <body class="dark:bg-neutral-600">
+    <header class="bg-white dark:bg-neutral-800 dark:text-neutral-200">
       <nav
-        class="bg-white-800 flex p-5 flex justify-between flex space-x-2 w-[90vw] mx-auto"
+        class="flex p-5 flex justify-between flex space-x-2 w-[90vw] mx-auto"
       >
         <a href="{{ url_for('home') }}">
           <div class="">
@@ -108,9 +111,9 @@
         </div>
       </nav>
     </header>
-    <main>{% block content %} {% endblock %}</main>
+    <main class="dark:bg-neutral-600">{% block content %} {% endblock %}</main>
     <footer
-      class="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left mt-[20px]"
+      class="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-900 dark:text-neutral-200 lg:text-left"
     >
       <div
         class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"
@@ -279,7 +282,9 @@
           </div>
         </div>
       </div>
-      <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+      <div
+        class="bg-neutral-200 p-6 text-center dark:bg-neutral-900 border-t-2 dark:border-neutral-500 border-neutral-300"
+      >
         <span>© 2023 Copyright:</span>
         <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="#"
           >Yo</a
