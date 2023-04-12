@@ -1,5 +1,10 @@
 {% extends "layout.html" %} {% block title %} Home {% endblock %} {% block
 content %}
+
+<script
+  src="{{ url_for('static', filename='scripts/homepage.js') }}"
+  defer
+></script>
 <!-- carousel -->
 <!-- Need to improve size with responsive rather than viewport -->
 <!-- need to write code to make carousel work -->
