@@ -1,5 +1,7 @@
 const html = document.documentElement;
 
+// Front End Logic: Sumit
+
 const switchToggle = document.querySelector("#switch-toggle");
 let isDarkmode = false;
 

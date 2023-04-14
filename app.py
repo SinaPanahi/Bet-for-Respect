@@ -15,6 +15,11 @@ db = SQLAlchemy(app)
 app.app_context().push()
 
 
+
+# Purv: Database Creation 
+# Sina: Routing, Authorization and authentication
+
+
 class Users(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(128), nullable=False)

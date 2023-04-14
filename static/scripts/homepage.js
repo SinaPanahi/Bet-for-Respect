@@ -142,6 +142,7 @@ async function displayGameSchedule(data) {
   const target = document.querySelector("#game-schedules");
   for (const game of data.dates[0].games) {
     const gameWrapper = document.createElement("div");
+    gameWrapper.classList.add("bg-white");
     gameWrapper.classList.add("game-schedule");
     gameWrapper.dataset.details = JSON.stringify(game);
 
@@ -200,9 +201,9 @@ function openScheduledGameOnClick() {
 // Sina: Python fetches the data at the controller level in app.py. Data is first written as Jason string on the
 // data attribute of #game-schedules div.
 // Data are fetched in the backend so that they can be insterted into DB.
-// const dataSource = document.querySelector("#game-schedules");
-// const oneWeekSchedule = JSON.parse(dataSource.dataset.oneweekschedule);
-// console.log("🚀 ~ file: scripts.js:194 ~ oneWeekSchedule:", oneWeekSchedule);
+const dataSource = document.querySelector("#game-schedules");
+const oneWeekSchedule = JSON.parse(dataSource.dataset.oneweekschedule);
+console.log("🚀 ~ file: scripts.js:194 ~ oneWeekSchedule:", oneWeekSchedule);
 
-// displayGameSchedule(oneWeekSchedule);
-// openScheduledGameOnClick();
+displayGameSchedule(oneWeekSchedule);
+openScheduledGameOnClick();
