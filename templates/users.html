@@ -1,6 +1,6 @@
 {% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
 content %}
-
+<!-- 
 <div class="border-b-2 mb-[8%]">
   <div
     class="min-h-[200px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
@@ -22,6 +22,64 @@ content %}
         </div>
         <p class="text-200 text-gray-300">sumitparida@gmail.com</p>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="p-16">
+  <div
+    class="p-8 bg-white shadow border-2 mt-24 dark:bg-neutral-700 dark:border-neutral-700"
+  >
+    <div class="">
+      <div class="">
+        <div
+          class="lg:w-[150px] lg:h-[150px] w-[100px] h-[100px] bg-indigo-100 absolute inset-x-0 -mt-16 flex items-center justify-center text-indigo-500 left-[37%] lg:left-[45%] top-[37%] lg:top-[30%]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-20 w-20"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="lg:mt-[5%] mt-[30%] text-center border-b pb-12">
+      <h1 class="text-4xl font-medium text-gray-700 dark:text-white">
+        {{session['username']}}
+      </h1>
+      <p class="font-light text-gray-600 mt-3 dark:text-neutral-300">
+        Total Bets - 0
+      </p>
+      <div
+        class="mx-auto flex justify-center align-baseline mt-2 flex-col lg:flex-row"
+      >
+        <p class="mt-2 mr-2 text-gray-500 dark:text-neutral-300">
+          Bets Won - 0
+        </p>
+        <p class="mt-2 mr-2 text-gray-500 dark:text-neutral-300">
+          Bets Lost - 0
+        </p>
+        <p class="mt-2 mr-2 text-gray-500 dark:text-neutral-300">
+          Active Bets - 0
+        </p>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col justify-center">
+      <p
+        class="text-gray-600 text-center font-light lg:px-16 dark:text-neutral-300"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eius
+        molestiae dignissimos obcaecati, suscipit labore sed delectus vitae
+        eveniet quo reprehenderit dolor dolore corrupti impedit laboriosam
+        mollitia similique minima molestias.
+      </p>
     </div>
   </div>
 </div>

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   overflow-x: hidden;
 }
@@ -57,13 +61,23 @@ body {
 }
 
 /* Sina: game-schedules display on home page */
-#game-schedules{
+#game-schedules {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
 
-#game-schedules .game-schedule{
+#game-schedules .game-schedule {
   padding: 10px;
   border: 1px solid black;
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #68d391;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+  background-color: #68d391;
 }

@@ -54,13 +54,19 @@ class Comments(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, nullable=False)
     game_id = Column(Integer, nullable=False)
-    posted = Column(DateTime, nullable=False)
+    comment = Column(Text, nullable=False)
+    posted = Column(DateTime, nullable=False, default=datetime.datetime.utcnow)
 
-    def __init__(self, user_id, game_id, posted):
+    def __init__(self, user_id, game_id, comment):
         self.user_id = user_id
         self.game_id = game_id
-        self.posted = posted
+        self.comment = comment
 
+    # def asDict(self):
+    #     for comment in self.__table__.columns:
+    #         comment.user_id: getattr(self, comment.user_id)
+                
+            
 
 @app.route('/')
 @app.route('/home')
@@ -88,6 +94,22 @@ def home():
     # If the game has ended update their status in Games table and display the most recent
     # ones in the ended games section under them future games.
     return render_template('home.html')
+
+@app.route('/discussions/<gameId>')
+def discussions(gameId):
+    if 'username' in session:
+        game = Games.query.filter_by(id=gameId).first()
+        temp = Comments.query.filter_by(game_id = str(game.id)).all()
+        # print(str(temp[0].comment))
+        
+        return render_template('discussions.html', 
+                               gameId=str(game.id), 
+                               team1=str(game.team_1), 
+                               team2=str(game.team_2), 
+                               start=str(game.start)
+                               )
+    else:
+        return render_template('home.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -120,7 +142,6 @@ def login():
         if (check_password_hash(user.password, password)):
             session['username'] = user.username
             session['email'] = user.email
-            print('s    ')
             return render_template('home.html')
         else:
             return redirect(url_for('login'))
